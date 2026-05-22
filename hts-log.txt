@@ -1,0 +1,39 @@
+HTTrack3.49-2 launched on Fri, 22 May 2026 13:28:30 at https://naddict.com +*.css +*.js +*.png +*.jpg +*.webp
+(httrack https://naddict.com -O /Users/davidarjan/cloned-site +*.css +*.js +*.png +*.jpg +*.webp )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+13:28:43	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://shop.app/checkouts/internal/preloads.js?locale=en-RO&shop_id=95354683775
+13:29:07	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:30:53	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:30:54	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:32:03	Error: 	"Not Found" (404) at link https://naddict.com/POST (from https://naddict.com/)
+13:32:03	Error: 	"Error when decompressing" (-1) at link https://naddict.com/cdn (from https://naddict.com/)
+13:32:03	Error: 	"Bad Request" (400) at link https://naddict.com/cart/add.js (from https://naddict.com/)
+13:32:04	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:32:21	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:32:49	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:33:24	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:33:28	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:33:54	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:33:55	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:33:56	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:00	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:24	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:25	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:26	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:30	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:34	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:35	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:36	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:37	Error: 	"Bad Request" (400) at link https://naddict.com/cart/change.js (from https://naddict.com/)
+13:34:37	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:38	Warning: 	link is probably looping, type unknown, aborting: https://naddict.com/checkout
+13:34:41	Error: 	"Not Found" (404) at link https://naddict.com/pages/POST (from https://naddict.com/pages/about)
+13:34:41	Error: 	"Not Found" (404) at link https://naddict.com/products/POST (from https://naddict.com/products/nadpulse-pen-kit-1)
+
+HTTrack Website Copier/3.49-2 mirror complete in 7 minutes 11 seconds : 202 links scanned, 195 files written (34082935 bytes overall) [29004635 bytes received at 67296 bytes/sec], 7588512 bytes transferred using HTTP compression in 99 files, ratio 26%, 13.3 requests per connection
+(6 errors, 22 warnings, 0 messages)
