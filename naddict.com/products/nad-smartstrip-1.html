@@ -3311,27 +3311,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Suggested Products -->
     <div class="cart-drawer__suggestions">
       <h3 class="suggestions__title">You might also like...</h3>
-      
-      <div class="suggestion-item">
-        <div class="suggestion-item__image">
-          <img src="../cdn/shop/t/32/assets/Nadpulse%20Pen%20kit14f4.png?v=31781062510986748201775885985" alt="NADpulse+ Pen Kit" class="suggestion-item__img">
-        </div>
-        <div class="suggestion-item__details">
-          <h4 class="suggestion-item__name">NADpulse+ Pen Kit</h4>
-          <div class="suggestion-item__pricing">
-            <span class="suggestion-item__price--current">£349.00</span>
-          </div>
-        </div>
-        <button class="suggestion-item__add-btn" onclick="addSuggestedItem('nadpulse-pen-kit', 'NADpulse+ Pen Kit', 349.00, '../cdn/shop/t/32/assets/Nadpulse%20Pen%20kit14f4.png?v=31781062510986748201775885985')">
-          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16.5" cy="18.5" r="1.5" fill="white"/>
-            <circle cx="9.5" cy="18.5" r="1.5" fill="white"/>
-            <path d="M18 16H8a1 1 0 0 1-.958-.713L4.256 6H3a1 1 0 0 1 0-2h2a1 1 0 0 1 .958.713L6.344 6H21a1 1 0 0 1 .937 1.352l-3 8A1 1 0 0 1 18 16zm-9.256-2h8.563l2.25-6H6.944z" fill="white"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="suggestion-item">
+<div class="suggestion-item">
         <div class="suggestion-item__image">
           <img src="../cdn/shop/t/32/assets/Vialsff43.png?v=90810362016220207791775885985" alt="Nad+Prime Vial kit" class="suggestion-item__img">
         </div>
@@ -4092,13 +4072,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function getVariantId(productId) {
     // Shopify Variant IDs - REAL IDs FROM YOUR STORE
     const variantMap = {
-      'nadpulse-pen-kit': 56467195494783,     // NADpulse+ Pen Kit (£349.00)
-      'nad-prime-vials': 56467202802047,       // Nad+Prime Vial kit (£249.00)
+          'nad-prime-vials': 56467202802047,       // Nad+Prime Vial kit (£249.00)
       'nad-smartstrip': 56467208339839,        // NAD SmartStrip+ (£69.00 one-time; subscription via selling plans)
-      'nad-pen-kit': 56467195494783,           // Fallback to NADpulse+ Pen Kit
-      'travel-case': 56467195494783             // Fallback to NADpulse+ Pen Kit
-    };
-    return variantMap[productId] || 56467195494783;
+            };
+    return variantMap[productId] || 56467202802047;
   }
 
   async function addSuggestedItem(productId, productName, price, image) {

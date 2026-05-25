@@ -12,6 +12,16 @@
   ],
   "redirects": [
     {
+      "source": "/products/nadpulse-pen-kit-1.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/products/nadpulse-pen-kit-1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/naddict.com/:path*",
       "destination": "/:path*",
       "permanent": true

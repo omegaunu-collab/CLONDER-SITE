@@ -27,11 +27,11 @@
 
     
 <meta property="og:title" content="Refund Policy">
-    <meta property="og:description" content="Discover premium NAD+ supplements with SpeedRelease™ technology. Buy NAD+ oral strips, injection pens &amp; vials online. Fast-acting cellular energy boost. Free UK delivery on orders over £100.">
+    <meta property="og:description" content="Discover premium NAD+ supplements with SpeedRelease™ technology. Buy NAD+ oral strips, vials online. Fast-acting cellular energy boost. Free UK delivery on orders over £100.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="refund-policy.html"><meta property="og:image" content="../cdn/shop/files/Naddict_logo1dd0.png?crop=center&amp;height=630&amp;v=1763022086&amp;width=1200"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Refund Policy">
-    <meta name="twitter:description" content="Discover premium NAD+ supplements with SpeedRelease™ technology. Buy NAD+ oral strips, injection pens &amp; vials online. Fast-acting cellular energy boost. Free UK delivery on orders over £100."><meta name="twitter:image" content="../cdn/shop/files/Naddict_logo1dd0.png?crop=center&amp;height=630&amp;v=1763022086&amp;width=1200"><script src="../cdn/shop/t/32/assets/global2940.js?v=180771702964191025171775885985" defer="defer"></script>
+    <meta name="twitter:description" content="Discover premium NAD+ supplements with SpeedRelease™ technology. Buy NAD+ oral strips, vials online. Fast-acting cellular energy boost. Free UK delivery on orders over £100."><meta name="twitter:image" content="../cdn/shop/files/Naddict_logo1dd0.png?crop=center&amp;height=630&amp;v=1763022086&amp;width=1200"><script src="../cdn/shop/t/32/assets/global2940.js?v=180771702964191025171775885985" defer="defer"></script>
     <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta name="google-site-verification" content="5xXVF5Q2gcJ64LlNGf1OKJnOlSneXlJ1nXAA4MAlHmM">
 <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/95354683775/digital_wallets/dialog">
 <meta name="shopify-checkout-api-token" content="c3a4f63a3255dad93eb0a288efe0258d">
@@ -1893,27 +1893,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Suggested Products -->
     <div class="cart-drawer__suggestions">
       <h3 class="suggestions__title">You might also like...</h3>
-      
-      <div class="suggestion-item">
-        <div class="suggestion-item__image">
-          <img src="../cdn/shop/t/32/assets/Nadpulse%20Pen%20kit14f4.png?v=31781062510986748201775885985" alt="NADpulse+ Pen Kit" class="suggestion-item__img">
-        </div>
-        <div class="suggestion-item__details">
-          <h4 class="suggestion-item__name">NADpulse+ Pen Kit</h4>
-          <div class="suggestion-item__pricing">
-            <span class="suggestion-item__price--current">£349.00</span>
-          </div>
-        </div>
-        <button class="suggestion-item__add-btn" onclick="addSuggestedItem('nadpulse-pen-kit', 'NADpulse+ Pen Kit', 349.00, '../cdn/shop/t/32/assets/Nadpulse%20Pen%20kit14f4.png?v=31781062510986748201775885985')">
-          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16.5" cy="18.5" r="1.5" fill="white"/>
-            <circle cx="9.5" cy="18.5" r="1.5" fill="white"/>
-            <path d="M18 16H8a1 1 0 0 1-.958-.713L4.256 6H3a1 1 0 0 1 0-2h2a1 1 0 0 1 .958.713L6.344 6H21a1 1 0 0 1 .937 1.352l-3 8A1 1 0 0 1 18 16zm-9.256-2h8.563l2.25-6H6.944z" fill="white"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="suggestion-item">
+<div class="suggestion-item">
         <div class="suggestion-item__image">
           <img src="../cdn/shop/t/32/assets/Vialsff43.png?v=90810362016220207791775885985" alt="Nad+Prime Vial kit" class="suggestion-item__img">
         </div>
@@ -2674,13 +2654,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function getVariantId(productId) {
     // Shopify Variant IDs - REAL IDs FROM YOUR STORE
     const variantMap = {
-      'nadpulse-pen-kit': 56467195494783,     // NADpulse+ Pen Kit (£349.00)
-      'nad-prime-vials': 56467202802047,       // Nad+Prime Vial kit (£249.00)
+          'nad-prime-vials': 56467202802047,       // Nad+Prime Vial kit (£249.00)
       'nad-smartstrip': 56467208339839,        // NAD SmartStrip+ (£69.00 one-time; subscription via selling plans)
-      'nad-pen-kit': 56467195494783,           // Fallback to NADpulse+ Pen Kit
-      'travel-case': 56467195494783             // Fallback to NADpulse+ Pen Kit
-    };
-    return variantMap[productId] || 56467195494783;
+            };
+    return variantMap[productId] || 56467202802047;
   }
 
   async function addSuggestedItem(productId, productName, price, image) {
