@@ -1,23 +1,25 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/naddict\.com/(.*)",
-      "status": 301,
-      "headers": {
-        "Location": "/$1"
-      }
+      "source": "/",
+      "destination": "/naddict.com/index.html"
     },
     {
-      "src": "/index\.html$",
-      "status": 301,
-      "headers": {
-        "Location": "/"
-      }
+      "source": "/:path*",
+      "destination": "/naddict.com/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/naddict.com/:path*",
+      "destination": "/:path*",
+      "permanent": true
     },
     {
-      "src": "/(.*)",
-      "dest": "/naddict.com/$1"
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
