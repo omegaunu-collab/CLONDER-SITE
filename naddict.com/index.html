@@ -3243,17 +3243,9 @@ document.addEventListener('DOMContentLoaded', function() {
           <h2 class="featured-products__title">Best <br> Sellers</h2>
         </div>
 
-        <!-- Carousel Section -->
-        <div class="featured-products__carousel-section">
-          <div class="featured-products__carousel-container">
-            <button id="best-sellers-carousel-prev" class="best-sellers-carousel-nav best-sellers-carousel-nav--prev" data-best-sellers-prev aria-label="Previous slide">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            
-            <div class="carousel-wrapper">
-              <div class="carousel-track" id="featured-products-track">
+        <!-- Products Grid -->
+        <div class="featured-products__grid-section">
+          <div class="featured-products__grid" id="featured-products-track">
                 
                 
                 <!-- Product 3: NAD SmartStrip+ -->
@@ -3390,14 +3382,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 
                 </div>
-            </div>
-            
-            <button id="best-sellers-carousel-next" class="best-sellers-carousel-nav best-sellers-carousel-nav--next" data-best-sellers-next aria-label="Next slide">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -3458,151 +3442,31 @@ document.addEventListener('DOMContentLoaded', function() {
     font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
   }
 
-  .featured-products__carousel-section {
+  .featured-products__grid-section {
     width: 100%;
-    overflow: hidden;
   }
 
-  .featured-products__carousel-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 0.5rem; /* Add horizontal padding to prevent clipping */
-    box-sizing: border-box;
-  }
-
-  .best-sellers-carousel-nav {
-    background-color: white;
-    border: 1px solid #EBEBEB;
-    color: #020218;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-    z-index: 10;
-    position: relative; /* Default for desktop */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .best-sellers-carousel-nav svg {
-    stroke: #020218;
-    transition: stroke 0.3s ease;
-  }
-
-  .best-sellers-carousel-nav:hover:not(:disabled) {
-    background-color: #34cfc7;
-    transform: scale(1.1);
-    color: white;
-  }
-
-  .best-sellers-carousel-nav:hover:not(:disabled) svg {
-    stroke: white !important;
-    color: white;
-  }
-
-  .best-sellers-carousel-nav:hover:not(:disabled) svg path {
-    stroke: white !important;
-  }
-
-  .best-sellers-carousel-nav:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
-  .carousel-wrapper {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    margin: 0 -0.5rem; /* Negative margin to compensate for container padding */
-  }
-
-  .carousel-track {
-    display: flex;
+  .featured-products__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
-    transition: transform 0.5s ease;
-    will-change: transform;
-    align-items: stretch; /* Ensure all cards have same height */
-    padding: 0 0.5rem; /* Add padding to prevent clipping during animation */
+    align-items: stretch;
+    width: 100%;
   }
 
-  /* Mobile-specific carousel fixes */
-  @media (max-width: 767px) {
-    .featured-products .container {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      max-width: 100% !important;
-      width: 100% !important;
-    }
-    
-    .featured-products__wrapper {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-    
-    .featured-products__content {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      justify-items: center;
-    }
-    
-    .featured-products__carousel-section {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      overflow: visible !important;
-    }
-    
-    .featured-products__carousel-container {
-      padding: 0;
-      margin: 0;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box;
-      position: relative;
-      overflow: visible !important; /* Ensure nav buttons are visible */
-      gap: 0;
-      min-height: 400px; /* Ensure container has height */
-    }
-    
-    .carousel-wrapper {
-      padding: 0;
-      overflow: hidden; /* Hidden for proper clipping of cards */
-      width: 100%;
-      margin: 0;
-      box-sizing: border-box;
-      flex: 1;
-      min-width: 0; /* Allow flex shrinking */
-      position: relative;
-      padding-right: 1rem; /* Add right padding to prevent cropping */
-    }
-    
-    .carousel-track {
-      gap: 1rem; /* Smaller gap on mobile for full-width cards */
-      padding: 0 1rem 0 0; /* Add right padding to prevent cropping */
-      justify-content: flex-start; /* Start from left, centering handled by JS transform */
-      width: 100%;
-      max-width: 100%;
-    }
-    
-    .carousel-track .product-card {
-      flex-shrink: 0; /* Prevent cards from shrinking */
-      box-sizing: border-box;
-    }
-  }
-
-  .carousel-track .product-card {
-    flex: 0 0 auto;
+  .featured-products__grid .product-card {
+    width: 100%;
     min-width: 0;
-    height: 100%; /* Ensure cards take full height of track */
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .featured-products__grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 420px;
+      margin: 0 auto;
+    }
   }
 
   .featured-products__badge {
@@ -4056,17 +3920,6 @@ document.addEventListener('DOMContentLoaded', function() {
       min-width: auto;
     }
 
-    .best-sellers-carousel-nav {
-      width: 40px;
-      height: 40px;
-    }
-    
-    /* Ensure desktop buttons maintain proper alignment */
-    .best-sellers-carousel-nav {
-      position: relative;
-      top: auto;
-      transform: none;
-    }
   }
 
   /* Mobile Styles */
@@ -4099,72 +3952,6 @@ document.addEventListener('DOMContentLoaded', function() {
       margin: 0 auto !important;
       width: 100% !important;
       display: block !important;
-    }
-
-    .featured-products__carousel-container {
-      gap: 0.5rem;
-      padding: 0 0.5rem; /* Small padding for nav buttons */
-    }
-
-    .best-sellers-carousel-nav {
-      width: 36px;
-      height: 36px;
-      flex-shrink: 0;
-      position: absolute !important;
-      z-index: 1000 !important;
-      background-color: white !important;
-      border: 1px solid #EBEBEB !important;
-      color: #06302E !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    
-    .best-sellers-carousel-nav--prev {
-      left: 0.5rem !important;
-      right: auto !important;
-    }
-    
-    .best-sellers-carousel-nav--next {
-      right: 0.5rem !important;
-      left: auto !important;
-    }
-    
-    /* Constrain container to viewport */
-    .featured-products__carousel-section {
-      overflow-x: hidden !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    
-    .featured-products__carousel-container {
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow: visible !important;
-      position: relative !important;
-    }
-    
-    /* Ensure buttons are within viewport bounds */
-    @media (max-width: 767px) {
-      .featured-products__wrapper,
-      .featured-products__content {
-        overflow: visible !important;
-      }
-    }
-
-    .best-sellers-carousel-nav svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .carousel-track {
-      gap: 1rem;
-      padding: 0 1rem 0 0.5rem; /* Add right padding to prevent cropping */
     }
 
     .product-card {
@@ -4216,20 +4003,6 @@ document.addEventListener('DOMContentLoaded', function() {
       display: block !important;
     }
 
-    .best-sellers-carousel-nav {
-      width: 32px;
-      height: 32px;
-    }
-
-    .best-sellers-carousel-nav svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .carousel-track {
-      gap: 1rem;
-    }
-
     .product-card__image {
       height: 180px;
     }
@@ -4264,505 +4037,28 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <script>
-// Carousel functionality for featured products
 document.addEventListener('DOMContentLoaded', function() {
-  const track = document.getElementById('featured-products-track');
-  // Use unique IDs and data attributes to prevent conflicts with other carousels
-  const prevBtn = document.getElementById('best-sellers-carousel-prev') || document.querySelector('[data-best-sellers-prev]');
-  const nextBtn = document.getElementById('best-sellers-carousel-next') || document.querySelector('[data-best-sellers-next]');
-  const wrapper = track?.parentElement;
-  
-  if (!track || !wrapper || !prevBtn || !nextBtn) return;
-  
-  let currentSlide = 0;
-  const totalProducts = 8;
-  let isUpdating = false; // Flag to prevent external interference
-  
-  // Get gap based on screen size (matches CSS)
-  function getGap() {
-    const width = window.innerWidth;
-    if (width < 768) return 16; // 1rem = 16px on mobile (matches CSS gap: 1rem)
-    return 32; // 2rem = 32px on desktop/tablet
-  }
-  
-  // Get slidesPerView based on screen size
-  function getSlidesPerView() {
-    const width = window.innerWidth;
-    if (width >= 1024) return 3; // Desktop: 3 products
-    if (width >= 768) return 2;   // Tablet: 2 products
-    return 1; // Mobile: 1 product
-  }
-  
-  // Calculate card width based on slidesPerView
-  function getCardWidth() {
-    const slidesPerView = getSlidesPerView();
-    const isMobile = window.innerWidth < 768;
-    
-    if (isMobile) {
-      // MOBILE: Calculate from wrapper width to ensure cards fit within viewport
-      const viewportWidth = window.innerWidth;
-      let wrapperWidth = wrapper.offsetWidth || wrapper.clientWidth;
-      
-      // If wrapper width is not available, use viewport width
-      if (!wrapperWidth || wrapperWidth === 0) {
-        wrapperWidth = viewportWidth;
-      }
-      
-      // Account for padding on wrapper (1rem = 16px) and container padding
-      const wrapperPadding = 16; // 1rem right padding on wrapper
-      const containerPadding = 8; // 0.5rem padding on container
-      const totalPadding = wrapperPadding + containerPadding;
-      
-      // Ensure we don't exceed viewport width, accounting for padding
-      const availableWidth = Math.min(wrapperWidth, viewportWidth) - totalPadding;
-      
-      const currentGap = getGap();
-      const totalGapWidth = currentGap * (slidesPerView - 1);
-      const calculatedWidth = (availableWidth - totalGapWidth) / slidesPerView;
-      
-      // Return the calculated width (ensures cards fit within viewport)
-      return Math.max(250, Math.floor(calculatedWidth));
-    }
-    
-    // DESKTOP/TABLET: Use wrapper width
-    let wrapperWidth = wrapper.offsetWidth || wrapper.clientWidth;
-    
-    // Account for wrapper padding
-    if (wrapperWidth > 0) {
-      const computedStyle = window.getComputedStyle(wrapper);
-      const paddingLeft = parseFloat(computedStyle.paddingLeft) || 0;
-      const paddingRight = parseFloat(computedStyle.paddingRight) || 0;
-      wrapperWidth = wrapperWidth - paddingLeft - paddingRight;
-    }
-    
-    // Fallback: try getting from container
-    if (!wrapperWidth || wrapperWidth === 0) {
-      const container = wrapper.closest('.featured-products__carousel-container');
-      if (container) {
-        const navButtons = container.querySelectorAll('.best-sellers-carousel-nav');
-        const navWidth = Array.from(navButtons).reduce((sum, btn) => sum + (btn.offsetWidth || 0), 0);
-        const containerGap = 16; // Gap between nav and wrapper
-        wrapperWidth = (container.offsetWidth || container.clientWidth) - navWidth - (containerGap * 2);
-      }
-    }
-    
-    // Final fallback for desktop
-    if (!wrapperWidth || wrapperWidth <= 0) {
-      const viewportWidth = window.innerWidth;
-      if (viewportWidth >= 1024) {
-        wrapperWidth = (viewportWidth - 200) * 0.7;
-      } else {
-        wrapperWidth = (viewportWidth - 100) * 0.8;
-      }
-    }
-    
-    const currentGap = getGap();
-    const totalGapWidth = currentGap * (slidesPerView - 1);
-    const calculatedWidth = (wrapperWidth - totalGapWidth) / slidesPerView;
-    
-    return Math.max(200, Math.floor(calculatedWidth));
-  }
-  
-  // Get maximum slide index
-  function getMaxSlide() {
-    const slidesPerView = getSlidesPerView();
-    // Calculate how many slides we can move
-    // With 7 products and sliding by 1, we can go from 0 to (totalProducts - slidesPerView)
-    // This ensures we can see all products including the last ones
-    // Example: 7 products, 3 visible = maxSlide of 4 (positions 0-4, showing products 1-7)
-    const maxSlides = Math.max(0, totalProducts - slidesPerView);
-    return maxSlides;
-  }
-  
-  function updateCarousel() {
-    // Prevent external code from interfering during updates
-    if (isUpdating) return;
-    isUpdating = true;
-    
-    try {
-      const isMobile = window.innerWidth < 768;
-      const cardWidth = getCardWidth();
-      const currentGap = getGap();
-      const slideWidth = cardWidth + currentGap;
-      const maxSlide = getMaxSlide();
-      
-      // Ensure currentSlide is within bounds
-      if (currentSlide > maxSlide) {
-        currentSlide = maxSlide;
-      }
-      if (currentSlide < 0) {
-        currentSlide = 0;
-      }
-      
-      let translateX = -currentSlide * slideWidth;
-      
-      // MOBILE: Center the first card by adding offset, but ensure it doesn't go outside viewport
-      if (isMobile) {
-        const wrapperWidth = wrapper.offsetWidth || wrapper.clientWidth;
-        const viewportWidth = window.innerWidth;
-        const actualWrapperWidth = Math.min(wrapperWidth, viewportWidth);
-        const cardOffset = (actualWrapperWidth - cardWidth) / 2;
-        translateX = translateX + cardOffset;
-        
-        // Ensure the card doesn't go outside viewport bounds
-        const maxTranslate = 0; // First card should start at offset
-        const minTranslate = -(maxSlide * slideWidth) + cardOffset; // Last card should end at offset
-        translateX = Math.max(minTranslate, Math.min(maxTranslate, translateX));
-      }
-      
-      track.style.transform = `translateX(${translateX}px)`;
-      
-      // Sync currentTranslate for touch events
-      currentTranslate = translateX;
-      
-      // Update navigation buttons with protection
-      const prevShouldBeDisabled = currentSlide === 0;
-      const nextShouldBeDisabled = currentSlide >= maxSlide;
-      
-      // Only update if the state is different to avoid unnecessary DOM manipulation
-      if (prevBtn.disabled !== prevShouldBeDisabled) {
-        prevBtn.disabled = prevShouldBeDisabled;
-      }
-      if (nextBtn.disabled !== nextShouldBeDisabled) {
-        nextBtn.disabled = nextShouldBeDisabled;
-      }
-    } finally {
-      isUpdating = false;
-    }
-  }
-  
-  // Protect button states from external modification
-  function protectButtonStates() {
-    if (isUpdating) return; // Don't interfere during our own updates
-    
-    const maxSlide = getMaxSlide();
-    const correctPrevState = currentSlide === 0;
-    const correctNextState = currentSlide >= maxSlide;
-    
-    // Restore correct state if it was changed externally
-    if (prevBtn.disabled !== correctPrevState) {
-      prevBtn.disabled = correctPrevState;
-    }
-    if (nextBtn.disabled !== correctNextState) {
-      nextBtn.disabled = correctNextState;
-    }
-  }
-  
-  function nextSlide() {
-    const maxSlide = getMaxSlide();
-    // Slide by 1 product at a time
-    // Allow going up to maxSlide (which shows the last set of products)
-    if (currentSlide < maxSlide) {
-      currentSlide++;
-      updateCarousel();
-    } else {
-      // Already at max, ensure carousel is updated
-      updateCarousel();
-    }
-  }
-  
-  function prevSlide() {
-    // Slide back by 1 product at a time
-    if (currentSlide > 0) {
-      currentSlide--;
-      updateCarousel();
-    } else {
-      // Already at start, ensure carousel is updated
-      updateCarousel();
-    }
-  }
-  
-  // Event listeners - stop propagation to prevent global.js from handling these
-  // Use capture phase to intercept before global.js handler
-  prevBtn.addEventListener('click', (e) => {
-    e.stopImmediatePropagation();
-    e.preventDefault();
-    prevSlide();
-  }, true); // Capture phase - fires before bubbling phase where global.js listens
-  
-  nextBtn.addEventListener('click', (e) => {
-    e.stopImmediatePropagation();
-    e.preventDefault();
-    nextSlide();
-  }, true); // Capture phase - fires before bubbling phase where global.js listens
-  
-  // Touch/swipe support for mobile
-  let startX = 0;
-  let isDragging = false;
-  let currentTranslate = 0;
-  
-  // Initialize currentTranslate
-  function syncTranslate() {
-    const isMobile = window.innerWidth < 768;
-    const cardWidth = getCardWidth();
-    const currentGap = getGap();
-    const slideWidth = cardWidth + currentGap;
-    let translateX = -currentSlide * slideWidth;
-    
-    // MOBILE: Center the first card by adding offset, but ensure it doesn't go outside viewport
-    if (isMobile) {
-      const wrapperWidth = wrapper.offsetWidth || wrapper.clientWidth;
-      const viewportWidth = window.innerWidth;
-      const actualWrapperWidth = Math.min(wrapperWidth, viewportWidth);
-      const cardOffset = (actualWrapperWidth - cardWidth) / 2;
-      translateX = translateX + cardOffset;
-      
-      // Ensure bounds
-      const maxSlide = getMaxSlide();
-      const maxTranslate = 0;
-      const minTranslate = -(maxSlide * slideWidth) + cardOffset;
-      translateX = Math.max(minTranslate, Math.min(maxTranslate, translateX));
-    }
-    
-    currentTranslate = translateX;
-  }
-  
-  track.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    syncTranslate();
-    track.style.transition = 'none';
-  });
-  
-  track.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const currentX = e.touches[0].clientX;
-    const diff = startX - currentX;
-    const newTranslate = currentTranslate - diff;
-    track.style.transform = `translateX(${newTranslate}px)`;
-  });
-  
-  track.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-    track.style.transition = 'transform 0.5s ease';
-    
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-    
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-    } else {
-      updateCarousel();
-    }
-  });
-  
-  // Recalculate card heights dynamically
-  function recalculateCardHeights() {
-    const track = document.getElementById('featured-products-track');
-    if (!track) return;
-    
-    const cards = track.querySelectorAll('.product-card');
-    if (cards.length === 0) return;
-    
-    // Reset all card heights to auto to get natural heights
-    cards.forEach(card => {
-      card.style.height = 'auto';
-    });
-    
-    // Force a reflow to ensure heights are calculated
-    void track.offsetHeight;
-    
-    // Find the tallest card
-    let maxHeight = 0;
-    cards.forEach(card => {
-      const cardHeight = card.offsetHeight;
-      if (cardHeight > maxHeight) {
-        maxHeight = cardHeight;
-      }
-    });
-    
-    // Apply the max height to all cards to keep them aligned
-    // But ensure minimum height is maintained
-    if (maxHeight > 0) {
-      cards.forEach(card => {
-        card.style.height = `${Math.max(maxHeight, 600)}px`;
-      });
-    }
-  }
-  
-  // Set card widths and heights based on current viewport
-  function setCardWidths() {
-    const cards = track.querySelectorAll('.product-card');
-    const isMobile = window.innerWidth < 768;
-    const cardWidth = getCardWidth();
-    
-    
-    if (cardWidth > 0) {
-      // First, set widths
-      cards.forEach(card => {
-        if (isMobile) {
-          // On mobile, set exact width to match calculated available space
-          // Ensure card doesn't exceed viewport width
-          const viewportWidth = window.innerWidth;
-          const maxCardWidth = Math.min(cardWidth, viewportWidth - 4); // Small margin to prevent overflow
-          card.style.flex = `0 0 ${maxCardWidth}px`;
-          card.style.width = `${maxCardWidth}px`;
-          card.style.maxWidth = `${maxCardWidth}px`;
-          card.style.minWidth = `${maxCardWidth}px`;
-          // Ensure no overflow
-          card.style.overflow = 'visible';
-          card.style.boxSizing = 'border-box';
-        } else {
-          card.style.flex = `0 0 ${cardWidth}px`;
-          card.style.width = `${cardWidth}px`;
-          card.style.minWidth = `${cardWidth}px`;
-        }
-      });
-      
-      // Recalculate card heights
-      recalculateCardHeights();
-    }
-  }
-  
-  // Initialize carousel
-  function initCarousel() {
-    setCardWidths();
-    syncTranslate();
-    updateCarousel();
-    
-    // Recalculate heights after a short delay to ensure images are loaded
-    setTimeout(() => {
-      setCardWidths();
-    }, 100);
-  }
-  
-  // Monitor button state changes and restore if modified externally
-  const buttonObserver = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'disabled') {
-        if (isUpdating) return; // Ignore our own changes
-        // Restore correct state
-        protectButtonStates();
-      }
-    });
-  });
-  
-  buttonObserver.observe(prevBtn, { 
-    attributes: true, 
-    attributeFilter: ['disabled']
-  });
-  buttonObserver.observe(nextBtn, { 
-    attributes: true, 
-    attributeFilter: ['disabled']
-  });
-  
-  // Periodic check to ensure button states are correct (as backup protection)
-  setInterval(() => {
-    if (!isUpdating) {
-      protectButtonStates();
-    }
-  }, 100); // Check every 100ms
-  
-  // Handle window resize
-  let resizeTimeout;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      setCardWidths(); // This will recalculate heights
-      syncTranslate();
-      updateCarousel();
-    }, 250);
-  });
-  
-  // Fix button alignment on mobile - ensure both buttons are at same vertical position
-  function fixButtonAlignment() {
-    const isMobile = window.innerWidth < 768;
-    if (!isMobile) {
-      // Reset desktop styles
-      const prevBtn = document.getElementById('best-sellers-carousel-prev') || document.querySelector('[data-best-sellers-prev]');
-      const nextBtn = document.getElementById('best-sellers-carousel-next') || document.querySelector('[data-best-sellers-next]');
-      if (prevBtn && nextBtn) {
-        prevBtn.style.position = '';
-        prevBtn.style.top = '';
-        prevBtn.style.transform = '';
-        nextBtn.style.position = '';
-        nextBtn.style.top = '';
-        nextBtn.style.transform = '';
-      }
-      return;
-    }
-    
-    const prevBtn = document.getElementById('best-sellers-carousel-prev') || document.querySelector('[data-best-sellers-prev]');
-    const nextBtn = document.getElementById('best-sellers-carousel-next') || document.querySelector('[data-best-sellers-next]');
-    const container = document.querySelector('.featured-products__carousel-container');
-    
-    if (prevBtn && nextBtn && container) {
-      const containerRect = container.getBoundingClientRect();
-      // Calculate vertical position based on container center
-      const containerCenter = containerRect.top + (containerRect.height / 2);
-      
-      // Both buttons should be at the same vertical position
-      // Use absolute positioning relative to container, centered vertically
-      prevBtn.style.position = 'absolute';
-      prevBtn.style.top = '50%';
-      prevBtn.style.transform = 'translateY(-50%)';
-      prevBtn.style.left = '0.5rem';
-      prevBtn.style.right = 'auto';
-      prevBtn.style.zIndex = '1000';
-      
-      nextBtn.style.position = 'absolute';
-      nextBtn.style.top = '50%';
-      nextBtn.style.transform = 'translateY(-50%)';
-      nextBtn.style.right = '0.5rem';
-      nextBtn.style.left = 'auto';
-      nextBtn.style.zIndex = '1000';
-      
-    }
-  }
-  
-  // Initialize carousel - try multiple times to ensure layout is ready
-  initCarousel();
-  fixButtonAlignment();
-  
-  // Fix after initialization
-  setTimeout(() => {
-    fixButtonAlignment();
-  }, 200);
-  
-  // Also initialize after a short delay to catch any layout changes
-  setTimeout(() => {
-    initCarousel();
-    fixButtonAlignment();
-  }, 100);
-  
-  // And once more after images load
-  if (document.readyState === 'loading') {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        initCarousel();
-        fixButtonAlignment();
-        initShowMoreButtons();
-      }, 50);
-    });
-  } else {
-    // Page already loaded
-    setTimeout(() => {
-      fixButtonAlignment();
-      initShowMoreButtons();
-    }, 500);
-  }
-  
-  // Fix on resize
-  window.addEventListener('resize', () => {
-    setTimeout(() => {
-      fixButtonAlignment();
-    }, 100);
-  });
-  
-  // Fix on scroll (in case container moves)
-  window.addEventListener('scroll', () => {
-    fixButtonAlignment();
-  });
-  
-  // Initialize show more buttons
   initShowMoreButtons();
+  syncBestSellerCardHeights();
 });
+
+function syncBestSellerCardHeights() {
+  const grid = document.getElementById('featured-products-track');
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.product-card');
+  if (cards.length < 2) return;
+  cards.forEach(card => { card.style.height = 'auto'; });
+  void grid.offsetHeight;
+  let maxHeight = 0;
+  cards.forEach(card => {
+    maxHeight = Math.max(maxHeight, card.offsetHeight);
+  });
+  if (maxHeight > 0) {
+    cards.forEach(card => {
+      card.style.height = maxHeight + 'px';
+    });
+  }
+}
 
 // Toggle description expand/collapse
 window.toggleDescription = function(button) {
@@ -4780,39 +4076,7 @@ window.toggleDescription = function(button) {
     button.textContent = 'Show less';
   }
   
-  // Recalculate card heights after toggle to allow dynamic adjustment
-  setTimeout(() => {
-    const track = document.getElementById('featured-products-track');
-    if (track) {
-      // Access the function from the carousel scope
-      const cards = track.querySelectorAll('.product-card');
-      if (cards.length > 0) {
-        // Reset all card heights to auto to get natural heights
-        cards.forEach(card => {
-          card.style.height = 'auto';
-        });
-        
-        // Force a reflow
-        void track.offsetHeight;
-        
-        // Find the tallest card
-        let maxHeight = 0;
-        cards.forEach(card => {
-          const cardHeight = card.offsetHeight;
-          if (cardHeight > maxHeight) {
-            maxHeight = cardHeight;
-          }
-        });
-        
-        // Apply the max height to all cards
-        if (maxHeight > 0) {
-          cards.forEach(card => {
-            card.style.height = `${Math.max(maxHeight, 600)}px`;
-          });
-        }
-      }
-    }
-  }, 10);
+  setTimeout(syncBestSellerCardHeights, 10);
 };
 
 // Initialize show more buttons - only show if text is truncated
@@ -9623,9 +8887,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   .subscribe-save__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    align-items: end;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .subscription-card {
@@ -9636,7 +8904,7 @@ document.addEventListener('DOMContentLoaded', function() {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-self: end;
+    align-self: stretch;
   }
 
   .subscription-card:hover {
@@ -9653,10 +8921,6 @@ document.addEventListener('DOMContentLoaded', function() {
     justify-content: center;
     padding: 1.5rem;
     flex-shrink: 0;
-  }
-
-  .subscription-card:nth-child(3) .subscription-card__image {
-    align-items: flex-end;
   }
 
   .product-image {
@@ -9866,6 +9130,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .subscribe-save__cards {
       grid-template-columns: 1fr;
       gap: 1.25rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .subscription-card__image {
