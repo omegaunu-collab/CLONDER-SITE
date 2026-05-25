@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/naddict.com/index.html" },
+    { "source": "/:path*", "destination": "/naddict.com/:path*" }
+  ],
+  "redirects": [
+    { "source": "/naddict.com/:path*", "destination": "/:path*", "permanent": true }
+  ]
+}
