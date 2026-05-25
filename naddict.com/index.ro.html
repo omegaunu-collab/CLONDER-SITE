@@ -627,6 +627,8 @@ first.parentNode.insertBefore(script, first);
   data-shs-logs-sample-rate="1"
   data-shs-beacon-endpoint="https://naddict.com/api/collect"
 ></script>
+    <script src="js/naddict-shop.js"></script>
+    <script src="js/naddict-cart-ui.js"></script>
 </head>
 
   <body class="gradient">
@@ -1059,7 +1061,7 @@ first.parentNode.insertBefore(script, first);
             <a href="index.html" class="language-toggle-button" aria-label="Treci la engleză">EN</a>
           </div>
           <!-- Buton Coș -->
-          <button class="cart-button" onclick="openCoșDrawer()">
+          <button class="cart-button" onclick="openCartDrawer()">
             <svg class="cart-icon" width="28" height="28" viewBox="0 0 576 512" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H200.4c-35.1 0-64.1-26.6-69.5-61.9L75.7 50.52C72.6 30.7 54.1 16 33.5 16H24C10.7 16 0 5.3 0 24zm128 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" fill="currentColor"/>
             </svg>
@@ -3300,7 +3302,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     <div class="product-card__actions">
                       
-                      <button type="button" class="btn btn-primary product-card__add-to-cart" onclick="window.bestVânzătoriAddToCoș(event, 'nad-smartstrip', 'NAD SmartStrip+', 345.0, 'cdn/shop/t/32/assets/Nad%20Strip9321.png?v=172847355907439936341775885985')">
+                      <button type="button" class="btn btn-primary product-card__add-to-cart" onclick="window.bestSellersAddToCart(event, 'nad-smartstrip', 'NAD SmartStrip+', 345.0, 'cdn/shop/t/32/assets/Nad%20Strip9321.png?v=172847355907439936341775885985')">
                         Adaugă în coș
                         <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M13.8192 7.45049L7.66451 13.8134C7.54894 13.9329 7.39219 14 7.22875 14C7.06532 14 6.90857 13.9329 6.793 13.8134C6.67743 13.6939 6.61251 13.5319 6.61251 13.3629C6.61251 13.1939 6.67743 13.0319 6.793 12.9124L11.8977 7.63629L0.615468 7.63629C0.452236 7.63629 0.295688 7.56925 0.180266 7.44993C0.0648433 7.3306 0 7.16876 0 7C0 6.83125 0.0648433 6.6694 0.180266 6.55007C0.295688 6.43075 0.452236 6.36371 0.615468 6.36371H11.8977L6.793 1.08759C6.67743 0.96811 6.61251 0.806063 6.61251 0.637095C6.61251 0.468127 6.67743 0.306079 6.793 0.186601C6.90857 0.0671223 7.06532 0 7.22875 0C7.39219 0 7.54894 0.0671227 7.66451 0.186601L13.8192 6.54951C13.8765 6.60861 13.922 6.67883 13.953 6.75613C13.984 6.83343 14 6.91631 14 7C14 7.08369 13.984 7.16657 13.953 7.24387C13.922 7.32117 13.8765 7.39139 13.8192 7.45049Z" fill="white"/>
@@ -3362,7 +3364,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     <div class="product-card__actions">
                       
-                      <button type="button" class="btn btn-primary product-card__add-to-cart" onclick="window.bestVânzătoriAddToCoș(event, 'nad-prime-vials', 'Kit Nad+Prime Vial', 1245.0, 'cdn/shop/t/32/assets/Vialsff43.png?v=90810362016220207791775885985')">
+                      <button type="button" class="btn btn-primary product-card__add-to-cart" onclick="window.bestSellersAddToCart(event, 'nad-prime-vials', 'Kit Nad+Prime Vial', 1245.0, 'cdn/shop/t/32/assets/Vialsff43.png?v=90810362016220207791775885985')">
                         Adaugă în coș
                         <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M13.8192 7.45049L7.66451 13.8134C7.54894 13.9329 7.39219 14 7.22875 14C7.06532 14 6.90857 13.9329 6.793 13.8134C6.67743 13.6939 6.61251 13.5319 6.61251 13.3629C6.61251 13.1939 6.67743 13.0319 6.793 12.9124L11.8977 7.63629L0.615468 7.63629C0.452236 7.63629 0.295688 7.56925 0.180266 7.44993C0.0648433 7.3306 0 7.16876 0 7C0 6.83125 0.0648433 6.6694 0.180266 6.55007C0.295688 6.43075 0.452236 6.36371 0.615468 6.36371H11.8977L6.793 1.08759C6.67743 0.96811 6.61251 0.806063 6.61251 0.637095C6.61251 0.468127 6.67743 0.306079 6.793 0.186601C6.90857 0.0671223 7.06532 0 7.22875 0C7.39219 0 7.54894 0.0671227 7.66451 0.186601L13.8192 6.54951C13.8765 6.60861 13.922 6.67883 13.953 6.75613C13.984 6.83343 14 6.91631 14 7C14 7.08369 13.984 7.16657 13.953 7.24387C13.922 7.32117 13.8765 7.39139 13.8192 7.45049Z" fill="white"/>
@@ -4109,218 +4111,30 @@ function initShowMoreButtons() {
   });
 }
 
-// Store cart functions in module scope to avoid conflicts
-window.bestVânzătoriAddToCoș = async function(event, productId, productName, price, image, quantity = 1) {
-  // Prevent double-clicking
+window.bestSellersAddToCart = async function(event, productId, productName, price, image, quantity = 1) {
   const btn = event.target.closest('button');
-  if (btn.disabled) {
-    return;
-  }
-  
-  // Disable button immediately
+  if (!btn || btn.disabled) return;
   btn.disabled = true;
   const originalHTML = btn.innerHTML;
   btn.innerHTML = 'Adding...';
-  
   try {
-    // Get the variant ID for this product (now async)
-    const variantId = await window.bestVânzătoriGetVariantId(productId);
-    
-    // Validate variant ID
-    if (!variantId || variantId === 'undefined' || isNaN(variantId)) {
-      throw new Error('Invalid product variant ID. Please contact support.');
-    }
-    
-    // Convert to number if it's a string
-    const numericVariantId = typeof variantId === 'string' ? parseInt(variantId, 10) : variantId;
-    
-    // Add cache-busting to prevent stale responses
-    const timestamp = Date.now();
-    
-    // Add to Magazinify cart using the AJAX API with cache-busting
-    const response = await fetch(`/cart/add.js?t=${timestamp}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'Pragma': 'no-cache',
-        'Expires': '0'
-        },
-        body: JSON.stringify({
-          id: numericVariantId,
-          quantity: quantity
-        })
-      });
-
-    // Verifică if response is ok
-    if (response.ok) {
-      const result = await response.json();
-      
-      // Success feedback
-      btn.innerHTML = '✓ Added!';
-      btn.style.background = '#34cfc7';
-      
-      // Update cart count in background (non-blocking)
-      window.bestVânzătoriUpdateCoșCount();
-      
-      // Reload cart drawer in background (non-blocking)
-      if (typeof initializeCoș === 'function') {
-        initializeCoș(); // No await - run in background
-      }
-      
-      // Open cart drawer immediately (non-blocking)
-      if (typeof openCoșDrawer === 'function') {
-        openCoșDrawer(); // No setTimeout - instant
-      }
-      
-      // Option to redirect directly to cart page (set to true to enable)
-      const redirectToCoș = false; // Change to true to redirect to cart page instead of opening drawer
-      if (redirectToCoș) {
-        setTimeout(() => {
-          window.location.href = 'cart.html';
-        }, 500);
-        return; // Don't reset button if redirecting
-      }
-      
-      // Reset button after 2 seconds
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 2000);
-    } else {
-      // Handle error response
-      let errorMessage = 'Unknown error. Please try again.';
-      
-      try {
-        const errorText = await response.text();
-        if (errorText) {
-          try {
-            const errorData = JSON.parse(errorText);
-            errorMessage = errorData.description || errorData.message || errorData.error || errorMessage;
-          } catch (e) {
-            // If not JSON, use the text as error message
-            if (errorText.length < 200) {
-              errorMessage = errorText;
-            }
-          }
-        }
-      } catch (parseError) {
-        // Error parsing error response
-      }
-      
-      // Revert button
+    await window.NaddictShop.init();
+    window.NaddictShop.addToCart(productId, { quantity, image, purchaseType: 'one-time' });
+    btn.innerHTML = '✓ Added!';
+    btn.style.background = '#34cfc7';
+    if (typeof initializeCart === 'function') await initializeCart();
+    if (typeof openCartDrawer === 'function') openCartDrawer();
+    setTimeout(() => {
       btn.innerHTML = originalHTML;
       btn.style.background = '';
       btn.disabled = false;
-      
-      // Show simple error alert (same as product-showcase section)
-      alert(`Sorry, there was an error adding to cart: ${errorMessage}`);
-    }
+    }, 2000);
   } catch (error) {
-    // Error adding to cart
-    
-    // Clear cache on error to force fresh fetch next time
-    delete variantIdCache[productId];
-    
-    // Revert button
     btn.innerHTML = originalHTML;
     btn.style.background = '';
     btn.disabled = false;
-    
-    const errorMessage = error.message || 'Unable to add item to cart. Please try again or contact support.';
-    
-    // Offer direct redirect to product page as alternative
-    const handle = productHandleMap[productId];
-    if (handle) {
-      const shouldRedirect = confirm(`${errorMessage}\n\nWould you like to go to the product page instead?`);
-      if (shouldRedirect) {
-        window.location.href = `/products/${handle}`;
-        return;
-      }
-    }
-    
-    alert(`Sorry, there was an error: ${errorMessage}`);
+    alert(error.message || 'Unable to add item to cart.');
   }
-}
-
-// Product handle mapping for dynamic variant fetching
-const productHandleMap = {
-  'nad-prime-vials': 'nad-prime-vials-1',
-  'nad-smartstrip': 'nad-smartstrip-1',
-};
-
-// Cache for variant IDs to avoid repeated API calls
-const variantIdCache = {};
-
-// Pre-fetch and validate variant IDs on page load to prevent stale data
-async function preloadVariantIds() {
-  const productsToPreload = ['nad-prime-vials', 'nad-smartstrip'];
-  
-  // Clear any existing cache for these products
-  productsToPreload.forEach(productId => {
-    delete variantIdCache[productId];
-  });
-  
-  // Pre-fetch variant IDs in parallel
-  await Promise.all(
-    productsToPreload.map(async (productId) => {
-      try {
-        await window.bestVânzătoriGetVariantId(productId);
-      } catch (error) {
-        // Silent fail - failed to preload variant ID
-      }
-    })
-  );
-}
-
-// Preload variant IDs when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(preloadVariantIds, 500); // Small delay to ensure page is fully loaded
-  });
-} else {
-  setTimeout(preloadVariantIds, 500);
-}
-
-window.bestVânzătoriGetVariantId = async function(productId) {
-  // Verifică cache first
-  if (variantIdCache[productId]) {
-    return variantIdCache[productId];
-  }
-  
-  // Use variant IDs from section settings (most reliable)
-  const variantMap = {
-      'nad-prime-vials': 56467202802047,
-    'nad-smartstrip': 56467208339839,
-                };
-  
-  let variantId = variantMap[productId] || 56467202802047;
-  
-  // Convert to number if it's a string
-  if (typeof variantId === 'string') {
-    const parsed = parseInt(variantId, 10);
-    variantId = isNaN(parsed) ? variantId : parsed;
-  }
-  
-  // Cache the variant ID (skip API fetch to avoid redirect issues)
-  variantIdCache[productId] = variantId;
-  return variantId;
-}
-
-window.bestVânzătoriUpdateCoșCount = function() {
-  fetch('cart.js')
-    .then(response => response.json())
-    .then(cart => {
-      const cartCount = document.getElementById('cart-count');
-      if (cartCount) {
-        cartCount.textContent = cart.item_count;
-        cartCount.style.display = cart.item_count > 0 ? 'flex' : 'none';
-      }
-    })
-    .catch(function(error) {
-      // Silent fail - error updating cart count
-    });
 }
 
 // Lightbox functionality
@@ -5540,7 +5354,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </svg>
               </button>
             </div>
-            <button type="button" class="add-to-cart-btn" id="showcase-add-to-cart-btn" onclick="window.productShowcaseAddToCoș(event, window.productShowcaseProductId, window.productShowcaseProductName, window.productShowcasePrice, 'cdn/shop/t/32/assets/2025-06-Naddict-Vial-Design2-2ddf9.png?v=10803768954931745821775885985', window.productShowcaseQuantity)">
+            <button type="button" class="add-to-cart-btn" id="showcase-add-to-cart-btn" onclick="window.productShowcaseAddToCart(event, window.productShowcaseProductId, window.productShowcaseProductName, window.productShowcasePrice, 'cdn/shop/t/32/assets/2025-06-Naddict-Vial-Design2-2ddf9.png?v=10803768954931745821775885985', window.productShowcaseQuantity)">
               Adaugă în coș
               <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13.8192 7.45049L7.66451 13.8134C7.54894 13.9329 7.39219 14 7.22875 14C7.06532 14 6.90857 13.9329 6.793 13.8134C6.67743 13.6939 6.61251 13.5319 6.61251 13.3629C6.61251 13.1939 6.67743 13.0319 6.793 12.9124L11.8977 7.63629L0.615468 7.63629C0.452236 7.63629 0.295688 7.56925 0.180266 7.44993C0.0648433 7.3306 0 7.16876 0 7C0 6.83125 0.0648433 6.6694 0.180266 6.55007C0.295688 6.43075 0.452236 6.36371 0.615468 6.36371H11.8977L6.793 1.08759C6.67743 0.96811 6.61251 0.806063 6.61251 0.637095C6.61251 0.468127 6.67743 0.306079 6.793 0.186601C6.90857 0.0671223 7.06532 0 7.22875 0C7.39219 0 7.54894 0.0671227 7.66451 0.186601L13.8192 6.54951C13.8765 6.60861 13.922 6.67883 13.953 6.75613C13.984 6.83343 14 6.91631 14 7C14 7.08369 13.984 7.16657 13.953 7.24387C13.922 7.32117 13.8765 7.39139 13.8192 7.45049Z" fill="white"/>
@@ -7149,114 +6963,37 @@ function updateTotal() {
   }
 }
 
-window.productShowcaseAddToCoș = async function(event, productId, productName, price, image, quantity = 1) {
-  // Prevent double-clicking
+window.productShowcaseAddToCart = async function(event, productId, productName, price, image, quantity) {
   const btn = event.target.closest('button');
-  if (btn.disabled) {
-    return;
-  }
-  
-  // Disable button immediately
+  if (!btn || btn.disabled) return;
+  const qty = quantity || window.productShowcaseQuantity || 1;
+  const purchaseType = showcaseCurrentPurchaseType || 'one-time';
   btn.disabled = true;
   const originalHTML = btn.innerHTML;
   btn.innerHTML = 'Adding...';
-  
   try {
-    // Get the variant ID for this product
-    const variantId = window.productShowcaseGetVariantId(productId);
-    
-    // Validate variant ID
-    if (!variantId || variantId === 'undefined' || isNaN(variantId)) {
-      throw new Error('Invalid product variant ID. Please contact support.');
-    }
-    
-    // Convert to number if it's a string
-    const numericVariantId = typeof variantId === 'string' ? parseInt(variantId, 10) : variantId;
-    
-    // Verifică if subscription is selected
-    if (showcaseCurrentPurchaseType === 'subscribe') {
-      // Handle subscription
-      await addShowcaseSubscriptionToCoș(numericVariantId, quantity, btn, originalHTML);
-      return;
-    }
-    
-    // Regular add to cart
-    const response = await fetch('cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: numericVariantId,
-        quantity: quantity
-      })
-    });
-
-    // Verifică if response is ok
-    if (response.ok) {
-      const result = await response.json();
-      
-      // Success feedback
-      btn.innerHTML = '✓ Added!';
-      btn.style.background = '#34cfc7';
-      
-      // Update cart count in background (non-blocking)
-      window.productShowcaseUpdateCoșCount();
-      
-      // Reload cart drawer in background (non-blocking)
-      if (typeof initializeCoș === 'function') {
-        initializeCoș(); // No await - run in background
-      }
-      
-      // Open cart drawer immediately (non-blocking)
-      if (typeof openCoșDrawer === 'function') {
-        openCoșDrawer(); // No setTimeout - instant
-      }
-      
-      // Reset button after 2 seconds
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 2000);
-    } else {
-      // Handle error response
-      let errorMessage = 'Unknown error. Please try again.';
-      
-      try {
-        const errorText = await response.text();
-        if (errorText) {
-          try {
-            const errorData = JSON.parse(errorText);
-            errorMessage = errorData.description || errorData.message || errorData.error || errorMessage;
-          } catch (e) {
-            // If not JSON, use the text as error message
-            if (errorText.length < 200) {
-              errorMessage = errorText;
-            }
-          }
-        }
-      } catch (parseError) {
-        // Error parsing error response
-      }
-      
-      // Revert button
+    await window.NaddictShop.init();
+    window.NaddictShop.addToCart(productId, { quantity: qty, image, purchaseType });
+    btn.innerHTML = '✓ Added!';
+    btn.style.background = '#34cfc7';
+    if (typeof initializeCart === 'function') await initializeCart();
+    if (typeof openCartDrawer === 'function') openCartDrawer();
+    setTimeout(() => {
       btn.innerHTML = originalHTML;
       btn.style.background = '';
       btn.disabled = false;
-      
-      alert(`Sorry, there was an error adding to cart: ${errorMessage}`);
-    }
+    }, 2000);
   } catch (error) {
-    // Revert button
     btn.innerHTML = originalHTML;
     btn.style.background = '';
     btn.disabled = false;
-    
-    const errorMessage = error.message || 'Unable to add item to cart. Please try again or contact support.';
-    alert(`Sorry, there was an error: ${errorMessage}`);
+    alert(error.message || 'Unable to add item to cart.');
   }
-}
+};
+
+window.productShowcaseUpdateCartCount = function() {
+  if (typeof initializeCart === 'function') initializeCart();
+};
 
 window.productShowcaseGetVariantId = function(productId) {
   // Magazinify Variant IDs - Configurable from Magazinify Customizer
@@ -12669,7 +12406,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Antet -->
     <div class="cart-drawer__header">
       <h2 class="cart-drawer__title">Coș</h2>
-      <button class="cart-drawer__close" onclick="closeCoșDrawer()">
+      <button class="cart-drawer__close" onclick="closeCartDrawer()">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -12699,7 +12436,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </button>
         </div>
-        <button class="cart-item__remove" onclick="removeCoșItem(this)">
+        <button class="cart-item__remove" onclick="removeCartItem(this)">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -13417,465 +13154,17 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <script>
-  // Magazinify Coș Integration
-  let cartItems = [];
-
-  // Initialize cart from Magazinify
-  async function initializeCoș() {
-    try {
-      const response = await fetch('cart.js');
-      const cart = await response.json();
-      cartItems = cart.items || [];
-      updateCoșDisplay();
-      updateCoșBadge();
-    } catch (error) {
-      // Silent fail - error loading cart
-    }
-  }
-
-  function openCoșDrawer() {
-    document.getElementById('cart-drawer').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    updateCoșDisplay();
-  }
-
-  function closeCoșDrawer() {
-    document.getElementById('cart-drawer').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  async function addToCoș(productId, productName, price, image, quantity = 1) {
-    try {
-      // Add item to Magazinify cart
-      const response = await fetch('cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: getVariantId(productId),
-          quantity: quantity
-        })
-      });
-
-      if (response.ok) {
-        // Reload cart data
-        await initializeCoș();
-        showAddToCoșFeedback(productName);
-      } else {
-        // Error adding to cart
-      }
-    } catch (error) {
-      // Error adding to cart
-    }
-  }
-
-  function getVariantId(productId) {
-    // Magazinify Variant IDs - REAL IDs FROM YOUR STORE
-    const variantMap = {
-          'nad-prime-vials': 56467202802047,       // Kit Nad+Prime Vial
-      'nad-smartstrip': 56467208339839,        // NAD SmartStrip+
-            };
-    return variantMap[productId] || 56467202802047;
-  }
-
-  async function addSuggestedItem(productId, productName, price, image) {
-    await addToCoș(productId, productName, price, image, 1);
-  }
-
-  // Track ongoing updates to prevent race conditions
-  const activeUpdates = new Set();
-
-  async function updateQuantity(button, change) {
-    const cartItem = button.closest('.cart-item');
-    const lineItemKey = cartItem.dataset.lineItemKey;
-    
-    // Prevent concurrent updates for the same item
-    if (activeUpdates.has(lineItemKey)) {
-      return;
-    }
-
-    const quantityDisplay = button.parentElement.querySelector('.quantity-display');
-    const currentQuantity = parseInt(quantityDisplay.textContent);
-    let newQuantity = currentQuantity + change;
-    
-    // Validate quantity bounds
-    if (newQuantity < 1) {
-      return;
-    }
-    
-    // Mark this item as updating
-    activeUpdates.add(lineItemKey);
-    
-    // Disable buttons immediately to prevent race conditions (UI feedback)
-    const quantityContainer = cartItem.querySelector('.cart-item__quantity');
-    const minusBtn = quantityContainer.querySelector('.quantity-btn--minus');
-    const plusBtn = quantityContainer.querySelector('.quantity-btn--plus');
-    
-    minusBtn.disabled = true;
-    plusBtn.disabled = true;
-    minusBtn.style.opacity = '0.5';
-    plusBtn.style.opacity = '0.5';
-    minusBtn.style.cursor = 'not-allowed';
-    plusBtn.style.cursor = 'not-allowed';
-    
-    // OPTIMISTIC UI UPDATE - Show change immediately for instant feedback
-    quantityDisplay.textContent = newQuantity;
-    
-    // Store original quantity for potential revert
-    const originalQuantity = currentQuantity;
-    
-    try {
-      // SINGLE API CALL - Update quantity directly using line item key
-      const response = await fetch('cart/change.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: lineItemKey,  // Use line item key stored in data attribute
-          quantity: newQuantity
-        })
-      });
-
-      if (response.ok) {
-        // Success - Update cart state once (non-blocking)
-        // Don't await - let it run in background for better UX
-        initializeCoș().catch(function(err) {
-          // Silent fail - error syncing cart
-        });
-      } else {
-        // Revert optimistic update on error
-        const errorData = await response.json();
-        quantityDisplay.textContent = originalQuantity;
-        
-        // Reload cart to get correct state
-        await initializeCoș();
-      }
-    } catch (error) {
-      // Error updating quantity
-      // Revert optimistic update on error
-      quantityDisplay.textContent = originalQuantity;
-      
-      // Reload cart to get correct state
-      await initializeCoș();
-    } finally {
-      // Re-enable buttons
-      minusBtn.disabled = false;
-      plusBtn.disabled = false;
-      minusBtn.style.opacity = '1';
-      plusBtn.style.opacity = '1';
-      minusBtn.style.cursor = 'pointer';
-      plusBtn.style.cursor = 'pointer';
-      
-      // Remove from active updates
-      activeUpdates.delete(lineItemKey);
-    }
-  }
-
-  async function removeCoșItem(button) {
-    // Disable button during removal
-    button.disabled = true;
-    button.style.opacity = '0.5';
-    button.style.cursor = 'not-allowed';
-    
-    const cartItem = button.closest('.cart-item');
-    const lineItemKey = cartItem.dataset.lineItemKey;
-    
-    try {
-      // Get fresh cart state
-      const cartResponse = await fetch('cart.js');
-      const cart = await cartResponse.json();
-      
-      // Find the actual line item
-      const lineItem = cart.items.find(item => {
-        return item.key === lineItemKey || 
-               item.variant_id.toString() === lineItemKey ||
-               item.id.toString() === lineItemKey;
-      }) || cart.items[parseInt(lineItemKey) - 1];
-      
-      if (!lineItem) {
-        throw new Error('Line item not found');
-      }
-      
-      const response = await fetch('cart/change.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: lineItem.key || lineItem.variant_id,
-          quantity: 0
-        })
-      });
-
-      if (response.ok) {
-        await initializeCoș();
-      } else {
-        // Error removing item
-        // Re-enable button on error
-        button.disabled = false;
-        button.style.opacity = '1';
-        button.style.cursor = 'pointer';
-      }
-    } catch (error) {
-      // Error removing item
-      // Re-enable button on error
-      button.disabled = false;
-      button.style.opacity = '1';
-      button.style.cursor = 'pointer';
-    }
-  }
-
-  function updateCoșDisplay() {
-    const cartItemsContainer = document.querySelector('.cart-drawer__items');
-    cartItemsContainer.innerHTML = '';
-    
-    if (cartItems.length === 0) {
-      cartItemsContainer.innerHTML = `
-        <div class="empty-cart-drawer">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem; opacity: 0.3;">
-            <path d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 10C16 10.5304 15.7893 11.0391 15.4142 11.4142C15.0391 11.7893 14.5304 12 14 12C13.4696 12 12.9609 11.7893 12.5858 11.4142C12.2107 11.0391 12 10.5304 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <h3 class="empty-cart-drawer__title">Coșul tău este gol</h3>
-          <p class="empty-cart-drawer__text">Start adding items to your cart!</p>
-        </div>
-      `;
-      
-      // Hide suggestions, summary, and checkout when cart is empty
-      const suggestionsEl = document.querySelector('.cart-drawer__suggestions');
-      const summaryEl = document.querySelector('.cart-drawer__summary');
-      const checkoutEl = document.querySelector('.cart-drawer__checkout');
-      
-      if (suggestionsEl) suggestionsEl.style.display = 'none';
-      if (summaryEl) summaryEl.style.display = 'none';
-      if (checkoutEl) checkoutEl.style.display = 'none';
-      
-      updateCoșTotal();
-      return;
-    }
-    
-    // Show sections when cart has items
-    const suggestionsEl = document.querySelector('.cart-drawer__suggestions');
-    const summaryEl = document.querySelector('.cart-drawer__summary');
-    const checkoutEl = document.querySelector('.cart-drawer__checkout');
-    
-    if (suggestionsEl) suggestionsEl.style.display = 'block';
-    if (summaryEl) summaryEl.style.display = 'block';
-    if (checkoutEl) checkoutEl.style.display = 'block';
-    
-    cartItems.forEach((item, index) => {
-      // Use item.key as the primary identifier (Magazinify's unique line item key)
-      // Fallback to variant_id if key is not available
-      const lineItemKey = item.key || item.variant_id || (index + 1);
-      const cartItemHTML = `
-        <div class="cart-item" data-line-item-key="${lineItemKey}">
-          <div class="cart-item__image">
-            <img src="${item.image || '/assets/no-image.png'}" alt="${item.title}" class="cart-item__img">
-          </div>
-          <div class="cart-item__details">
-            <h3 class="cart-item__name">${item.product_title}</h3>
-            <p class="cart-item__price">${((item.price / 100) * 5).toFixed(2)} lei</p>
-          </div>
-          <div class="cart-item__quantity">
-            <button class="quantity-btn quantity-btn--minus" onclick="updateQuantity(this, -1)">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-            <span class="quantity-display">${item.quantity}</span>
-            <button class="quantity-btn quantity-btn--plus" onclick="updateQuantity(this, 1)">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 2V12M2 7H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-          <button class="cart-item__remove" onclick="removeCoșItem(this)">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
-      `;
-      cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
-    });
-    
-    updateCoșTotal();
-  }
-
-  function updateCoșBadge() {
-    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-    const cartCountElement = document.getElementById('cart-count');
-    if (cartCountElement) {
-      cartCountElement.textContent = totalItems;
-      // Show/hide badge based on items
-      if (totalItems > 0) {
-        cartCountElement.style.display = 'flex';
-      } else {
-        cartCountElement.style.display = 'none';
-      }
-    }
-  }
-
-  function updateCoșTotal() {
-    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0) / 100;
-    const total = subtotal; // Add shipping, taxes, discounts here if needed
-    
-    const subtotalElement = document.getElementById('subtotal');
-    const totalElement = document.getElementById('total');
-    
-    if (subtotalElement) {
-      subtotalElement.textContent = `${(subtotal * 5).toFixed(2)} lei`;
-    }
-    if (totalElement) {
-      totalElement.textContent = `${(total * 5).toFixed(2)} lei`;
-    }
-  }
-
-  function showAddToCoșFeedback(productName) {
-    // Create a temporary success message
-    const feedback = document.createElement('div');
-    feedback.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #20B2AA;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      z-index: 1001;
-      animation: slideIn 0.3s ease-out;
-    `;
-    feedback.textContent = `${productName} added to cart!`;
-    
-    document.body.appendChild(feedback);
-    
-    setTimeout(() => {
-      feedback.style.animation = 'slideOut 0.3s ease-in';
-      setTimeout(() => {
-        document.body.removeChild(feedback);
-      }, 300);
-    }, 2000);
-  }
-
   function showDiscountMessage(message, type) {
     const messageEl = document.querySelector('.discount-message');
+    if (!messageEl) return;
     messageEl.textContent = message;
-    messageEl.className = `discount-message ${type}`;
+    messageEl.className = 'discount-message ' + type;
     messageEl.style.display = 'block';
-    
-    // Auto-hide after 3 seconds
-    setTimeout(() => {
-      messageEl.style.display = 'none';
-    }, 3000);
+    setTimeout(function() { messageEl.style.display = 'none'; }, 3000);
   }
-
   async function applyDiscount() {
-    const discountInput = document.querySelector('.discount-input');
-    const discountCode = discountInput.value.trim();
-    
-    if (!discountCode) {
-      showDiscountMessage('Please enter a discount code', 'error');
-      return;
-    }
-    
-    try {
-      // Get cart state BEFORE applying discount
-      const beforeResponse = await fetch('cart.js');
-      const beforeCoș = await beforeResponse.json();
-      const beforeDiscount = beforeCoș.total_discount || 0;
-      
-      // Apply discount
-      const updateResponse = await fetch('cart/update.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          discount_code: discountCode
-        })
-      });
-
-      if (updateResponse.ok) {
-        // Get cart state AFTER applying discount
-        const afterResponse = await fetch('cart.js');
-        const afterCoș = await afterResponse.json();
-        const afterDiscount = afterCoș.total_discount || 0;
-        
-        // Compare discounts - if increased, the coupon worked
-        if (afterDiscount > beforeDiscount) {
-          // Success - discount was applied!
-          discountInput.value = '';
-          await initializeCoș();
-          showDiscountMessage('Discount applied successfully!', 'success');
-        } else {
-          // Discount didn't change - invalid coupon
-          showDiscountMessage('Coupon code not found or invalid', 'error');
-        }
-      } else {
-        const error = await updateResponse.json();
-        showDiscountMessage('Could not apply discount code. Please try again.', 'error');
-      }
-    } catch (error) {
-      // Error applying discount
-      showDiscountMessage('Sorry, there was an error applying the discount code.', 'error');
-    }
+    showDiscountMessage('Codurile de reducere nu sunt disponibile încă.', 'error');
   }
-
-  function proceedToVerificăout() {
-    // Redirect to Magazinify checkout
-    window.location.href = 'cart.html';
-  }
-
-  // Close cart drawer when clicking overlay
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('cart-drawer__overlay')) {
-      closeCoșDrawer();
-    }
-  });
-
-  // Close cart drawer with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeCoșDrawer();
-    }
-  });
-
-  // Initialize cart display on page load
-  document.addEventListener('DOMContentLoaded', function() {
-    initializeCoș();
-  });
-
-  // Add CSS animations
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    @keyframes slideOut {
-      from {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-    }
-  `;
-  document.head.appendChild(style);
 </script>
     </main>
 
@@ -14271,7 +13560,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Initialize cart
       document.addEventListener('DOMContentLoaded', function() {
         if (typeof initializeCoș === 'function') {
-          initializeCoș();
+          initializeCart();
         }
       });
     </script><!-- Buton mobil Cumpără acum fixat (ascuns pe mobil - înlocuit de meniul inferior) -->
@@ -14305,7 +13594,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </svg>
         <span>Întrebări frecvente</span>
       </a>
-      <button type="button" class="mobile-nav-item" onclick="openCoșDrawer()">
+      <button type="button" class="mobile-nav-item" onclick="openCartDrawer()">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
